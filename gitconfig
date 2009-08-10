@@ -3,11 +3,13 @@
 
 # DO NOT EDIT BELOW THIS LINE
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  diff = auto
+  status = auto
+  branch = auto
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
+  autocrlf = false
+  editor = gvim --remote-tab-wait
 [alias]
   c = commit -m
   a = add
