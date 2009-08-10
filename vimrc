@@ -40,7 +40,7 @@ if has("autocmd")
   au!
 
   " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  autocmd FileType text,mkd setlocal textwidth=78
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -49,6 +49,10 @@ if has("autocmd")
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
+
+  " Save session on close and restore on open
+  autocmd VimLeave * mksession! ~\\work-session.vim
+  autocmd VimEnter * source ~\\work-session.vim
 
   augroup END
 
@@ -102,15 +106,27 @@ map <Leader>h :set invhls <CR>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+if has('gui_win32')
+  map <Leader>e :e <C-R>=expand("%:p:h") . "\\" <CR>
+else
+  map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+end
 
 " Opens a tab edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>t
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+if has('gui_win32')
+  map <Leader>te :tabe <C-R>=expand("%:p:h") . "\\" <CR>
+else
+  map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+end
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+if has('gui_win32')
+  cmap <C-P> <C-R>=expand("%:p:h") . "\\" <CR>
+else
+  cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+end
 
 " Maps autocomplete to tab
 imap <Tab> <C-N>
@@ -133,7 +149,8 @@ imap <C-F> <C-R>=expand("%")<CR>
 vmap P p :call setreg('"', getreg('0')) <CR>
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·
+" set list listchars=tab:»·,trail:·
+set list listchars=tab:��,trail:�
 
 " Edit routes
 command! Rroutes :e config/routes.rb
