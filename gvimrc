@@ -1,6 +1,6 @@
 " Font
-if has('gui_mac')
-  set guifont=Monaco:h10.00
+if has('gui_macvim')
+  set guifont=Monaco:h12.00
 elseif has('gui_gtk2')
   set guifont=Dejavu\s Sans\ Mono\ 11
 elseif has('gui_win32')
