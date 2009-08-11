@@ -24,8 +24,10 @@ function! MarkdownRender(lines)
     throw "Could not find Markdown!"
   end
 
-  let text = join(a:lines, "\n")
-  let html = system("Markdown.pl", text)
+  "let text = join(a:lines, "\n")
+  "let html = system("Markdown.pl", text)
+  let temp = writefile(a:lines,"markdown-input.txt")
+  let html = system("Markdown.pl markdown-input.txt")
   return html
 endfunction
 
@@ -36,7 +38,7 @@ function! MarkdownRenderFile(lines, filename)
 endfunction
 
 function! MarkdownRenderBufferToPreview()
-  let filename = "/tmp/textile-preview.html"
+  let filename = "markdown-preview.html"
   call MarkdownRenderFile(getbufline(bufname("%"), 1, '$'), filename)
 
   if has('gui_macvim')
@@ -49,7 +51,7 @@ function! MarkdownRenderBufferToPreview()
 endfunction
 
 function! MarkdownRenderBufferToFile()
-  let filename = input("Filename:", substitute(bufname("%"), "(txt|mkd)$", "html", ""), "file")
+  let filename = input("Filename:", substitute(bufname("%"), "\(txt\|mkd\)$", "html", ""), "file")
   call MarkdownRenderFile(getbufline(bufname("%"), 1, '$'), filename)
   echo "Rendered to '" . filename . "'"
 endfunction
