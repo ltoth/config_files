@@ -37,8 +37,8 @@ if version >= 700
   hi TabLineSel guifg=#a09998 guibg=#404850 gui=underline
 
   "P-Menu (auto-completion)
-  hi Pmenu guifg=#605958 guibg=#303030 gui=underline
-  hi PmenuSel guifg=#a09998 guibg=#404040 gui=underline
+  hi Pmenu guifg=#605958 guibg=#303030
+  hi PmenuSel guifg=#a09998 guibg=#404040
   "PmenuSbar
   "PmenuThumb
 endif
@@ -55,8 +55,8 @@ exe 'hi NonText        guifg='.s:lightgrey         .' guibg='.s:grey
 exe 'hi SpecialKey     guifg='.s:grey              .' guibg='.s:darkgrey
 
 exe 'hi LineNr         guifg='.s:mid_grey_blue     .' guibg='.s:dark_grey_blue  .' gui=none'
-exe 'hi StatusLine     guifg='.s:white             .' guibg='.s:grey            .' gui=italic,underline'
-exe 'hi StatusLineNC   guifg='.s:lightgrey         .' guibg='.s:grey            .' gui=italic,underline'
+exe 'hi StatusLine     guifg='.s:white             .' guibg='.s:grey            .' gui=italic'
+exe 'hi StatusLineNC   guifg='.s:lightgrey         .' guibg='.s:grey            .' gui=italic'
 exe 'hi VertSplit      guifg='.s:grey              .' guibg='.s:grey            .' gui=none'
 
 exe 'hi Folded         guifg='.s:grey_blue         .' guibg='.s:dark_grey_blue  .' gui=none'
@@ -66,7 +66,7 @@ exe 'hi SignColumn     guifg='.s:grey_blue         .' guibg='.s:dark_grey_blue  
 exe 'hi Comment        guifg='.s:mid_grey_blue     .' guibg='.s:darkgrey        .' gui=italic'
 exe 'hi TODO           guifg='.s:grey_blue         .' guibg='.s:darkgrey        .' gui=italic,bold'
 
-exe 'hi Title          guifg='.s:red               .' guibg='.s:darkgrey        .' gui=underline'
+exe 'hi Title          guifg='.s:red               .' guibg='.s:darkgrey        .' gui=none'
 
 exe 'hi Constant       guifg='.s:red               .' guibg='.s:darkgrey        .' gui=none'
 exe 'hi String         guifg='.s:green             .' guibg='.s:darkgrey        .' gui=none'
