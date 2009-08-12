@@ -55,7 +55,7 @@ if has("autocmd")
     autocmd VimLeave * mksession! ~\\work-session.vim
     autocmd VimEnter * source ~\\work-session.vim
   else
-    autocmd VimLeave * mksession! ~/work-session.vim
+    " autocmd VimLeave * mksession! ~/work-session.vim
     autocmd VimEnter * source ~/work-session.vim
   end
 
@@ -85,6 +85,9 @@ set laststatus=2
 
 " \ is the leader character
 let mapleader = "\\"
+
+" Store this session
+map <Leader>ss :mksession! ~/work-session.vim
 
 " Edit the README_FOR_APP (makes :R commands work)
 map <Leader>R :e doc/README_FOR_APP<CR>
