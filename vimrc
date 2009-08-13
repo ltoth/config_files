@@ -172,6 +172,8 @@ endif
 " Use Ack instead of Grep when available
 if executable("ack")
   set grepprg=ack\ -H\ --nogroup\ --nocolor
+elseif executable("ack.pl")
+  set grepprg=ack.pl\ -H\ --nogroup\ --nocolor
 endif
 
 " Color scheme
