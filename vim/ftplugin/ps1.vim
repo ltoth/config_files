@@ -14,6 +14,7 @@ let b:did_ftplugin = 1
 
 setlocal tw=0
 setlocal commentstring=#%s
+setlocal comments=:#
 setlocal formatoptions=tcqro
 
 " Change the browse dialog on Win32 to show mainly PowerShell-related files
