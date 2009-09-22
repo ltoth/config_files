@@ -50,14 +50,14 @@ if has("autocmd")
     \   exe "normal g`\"" |
     \ endif
 
-  " Save session on close and restore on open
-  if has('gui_win32')
-    autocmd VimLeave * mksession! ~\\work-session.vim
-    autocmd VimEnter * source ~\\work-session.vim
-  else
-    " autocmd VimLeave * mksession! ~/work-session.vim
-    autocmd VimEnter * source ~/work-session.vim
-  end
+  "" Save session on close and restore on open
+  "if has('gui_win32')
+  "  autocmd VimLeave * mksession! ~\\work-session.vim
+  "  autocmd VimEnter * source ~\\work-session.vim
+  "else
+  "  " autocmd VimLeave * mksession! ~/work-session.vim
+  "  autocmd VimEnter * source ~/work-session.vim
+  "end
 
   augroup END
 
