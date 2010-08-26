@@ -67,13 +67,13 @@ else
 
 endif " has("autocmd")
 
-" if has("folding")
-  " set foldenable
-  " set foldmethod=syntax
-  " set foldlevel=1
-  " set foldnestmax=2
-  " set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
-" endif
+if has("folding")
+  set foldenable
+  set foldmethod=syntax
+  set foldlevel=1
+  set foldnestmax=2
+  set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+endif
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -111,6 +111,9 @@ map <Leader>sf :RSfunctionaltest
 
 " Hide search highlighting
 map <Leader>h :set invhls <CR>
+
+" Toggle listchars
+map <Leader>l :set list! <CR>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
@@ -158,7 +161,7 @@ vmap P p :call setreg('"', getreg('0')) <CR>
 
 " Display extra whitespace
 " set list listchars=tab:Â»Â·,trail:Â·
-set list listchars=tab:»·,trail:·
+set list listchars=tab:»·,trail:·,eol:¬
 
 " Edit routes
 command! Rroutes :e config/routes.rb
@@ -178,7 +181,7 @@ endif
 
 " Color scheme
 colorscheme twilight
-highlight NonText guibg=#060606
+"highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Numbers

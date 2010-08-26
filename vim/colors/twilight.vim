@@ -54,7 +54,7 @@ hi Cursor guibg=#a7a7a7
 
 exe 'hi Normal         guifg='.s:white             .' guibg='.s:darkgrey
 exe 'hi Underlined     guifg='.s:grey_blue             .' guibg='.s:darkgrey        .' gui=underline'
-exe 'hi NonText        guifg='.s:lightgrey         .' guibg='.s:grey
+exe 'hi NonText        guifg='.s:grey         .' guibg='.s:darkgrey
 exe 'hi SpecialKey     guifg='.s:grey              .' guibg='.s:darkgrey
 
 exe 'hi LineNr         guifg='.s:mid_grey_blue     .' guibg='.s:dark_grey_blue  .' gui=none'
