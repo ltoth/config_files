@@ -22,8 +22,8 @@ let s:lightgreen = '#daefa3'
 let s:red = '#cf694b'
 let s:cyan = '#74dad9'
 let s:darkgrey = '#131313'
-let s:grey = '#202020'
-let s:lightgrey = '#899a95'
+let s:grey = '#303030'
+let s:lightgrey = s:mid_grey_blue "'#606060'
 let s:white = '#f7f7f7'
 let s:brown = '#9a703f'
 let s:orange = '#cf7c34'
@@ -31,18 +31,18 @@ let s:lightorange = '#e8bf62'
 let s:lightblue = '#afc3db'
 
 if version >= 700
-  hi CursorLine guibg=#202020
-  hi CursorColumn guibg=#202020
+  hi CursorLine guibg=#303030
+  hi CursorColumn guibg=#303030
   hi MatchParen guifg=#f9ed97 guibg=#282828 gui=bold
 
   "Tabpages
-  hi TabLine guifg=#a09998 guibg=#202020 gui=underline
-  hi TabLineFill guifg=#a09998 guibg=#202020 gui=underline
+  hi TabLine guifg=#a09998 guibg=#303030 gui=underline
+  hi TabLineFill guifg=#a09998 guibg=#303030 gui=underline
   hi TabLineSel guifg=#a09998 guibg=#404850 gui=underline
 
   "P-Menu (auto-completion)
   hi Pmenu guifg=#5e5960 guibg=#1a1a1a
-  hi PmenuSel guifg=#899a95 guibg=#202020
+  hi PmenuSel guifg=#899a95 guibg=#303030
   "PmenuSbar
   "PmenuThumb
 endif
@@ -54,8 +54,8 @@ hi Cursor guibg=#a7a7a7
 
 exe 'hi Normal         guifg='.s:white             .' guibg='.s:darkgrey
 exe 'hi Underlined     guifg='.s:grey_blue             .' guibg='.s:darkgrey        .' gui=underline'
-exe 'hi NonText        guifg='.s:grey         .' guibg='.s:darkgrey
-exe 'hi SpecialKey     guifg='.s:grey              .' guibg='.s:darkgrey
+exe 'hi NonText        guifg='.s:lightgrey         .' guibg='.s:darkgrey
+exe 'hi SpecialKey     guifg='.s:lightgrey              .' guibg='.s:darkgrey
 
 exe 'hi LineNr         guifg='.s:mid_grey_blue     .' guibg='.s:dark_grey_blue  .' gui=none'
 exe 'hi StatusLine     guifg='.s:white             .' guibg='.s:grey            .' gui=italic'
