@@ -77,8 +77,59 @@ endif
 
 " Softtabs, 2 spaces
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
 set expandtab
+
+" Functions for working with tabs and spaces (from
+" http://vimcasts.org/episodes/tabs-and-spaces/)
+
+" Set tabstop, softtabstop and shiftwidth to the same value
+command! -nargs=* Stab call Stab()
+function! Stab()
+  let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+  if l:tabstop > 0
+    let &l:sts = l:tabstop
+    let &l:ts = l:tabstop
+    let &l:sw = l:tabstop
+  endif
+  call SummarizeTabs()
+endfunction
+ 
+function! SummarizeTabs()
+  try
+    echohl ModeMsg
+    echon 'tabstop='.&l:ts
+    echon ' shiftwidth='.&l:sw
+    echon ' softtabstop='.&l:sts
+    if &l:et
+      echon ' expandtab'
+    else
+      echon ' noexpandtab'
+    endif
+  finally
+    echohl None
+  endtry
+endfunction
+
+" Function to preserve state (from
+" http://vimcasts.org/episodes/tidying-whitespace/)
+function! Preserve(command)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap <Leader>= :call Preserve("normal gg=G")<CR>
+
+command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+	 	\ | wincmd p | diffthis
 
 " Always display the status line
 set laststatus=2
@@ -87,33 +138,36 @@ set laststatus=2
 let mapleader = "\\"
 
 " Store this session
-map <Leader>ss :mksession! ~/work-session.vim
+"map <Leader>ss :mksession! ~/work-session.vim
 
 " Edit the README_FOR_APP (makes :R commands work)
-map <Leader>R :e doc/README_FOR_APP<CR>
+"map <Leader>R :e doc/README_FOR_APP<CR>
 
 " Leader shortcuts for Rails commands
-map <Leader>m :Rmodel 
-map <Leader>c :Rcontroller 
-map <Leader>v :Rview 
-map <Leader>u :Runittest 
-map <Leader>f :Rfunctionaltest 
-map <Leader>tm :RTmodel 
-map <Leader>tc :RTcontroller 
-map <Leader>tv :RTview 
-map <Leader>tu :RTunittest 
-map <Leader>tf :RTfunctionaltest 
-map <Leader>sm :RSmodel 
-map <Leader>sc :RScontroller 
-map <Leader>sv :RSview 
-map <Leader>su :RSunittest 
-map <Leader>sf :RSfunctionaltest 
+"map <Leader>m :Rmodel 
+"map <Leader>c :Rcontroller 
+"map <Leader>v :Rview 
+"map <Leader>u :Runittest 
+"map <Leader>f :Rfunctionaltest 
+"map <Leader>tm :RTmodel 
+"map <Leader>tc :RTcontroller 
+"map <Leader>tv :RTview 
+"map <Leader>tu :RTunittest 
+"map <Leader>tf :RTfunctionaltest 
+"map <Leader>sm :RSmodel 
+"map <Leader>sc :RScontroller 
+"map <Leader>sv :RSview 
+"map <Leader>su :RSunittest 
+"map <Leader>sf :RSfunctionaltest 
 
 " Hide search highlighting
 map <Leader>h :set invhls <CR>
 
 " Toggle listchars
 map <Leader>l :set list! <CR>
+
+" Spell checking
+nmap <silent> <Leader>s :set spell! <CR>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
@@ -140,7 +194,7 @@ else
 end
 
 " Maps autocomplete to tab
-imap <Tab> <C-N>
+"imap <Tab> <C-N>
 
 " Duplicate a selection
 " Visual mode: D
@@ -164,8 +218,8 @@ vmap P p :call setreg('"', getreg('0')) <CR>
 set list listchars=tab:»·,trail:·,eol:¬
 
 " Edit routes
-command! Rroutes :e config/routes.rb
-command! RTroutes :tabe config/routes.rb
+"command! Rroutes :e config/routes.rb
+"command! RTroutes :tabe config/routes.rb
 
 " Local config
 if filereadable(".vimrc.local")
