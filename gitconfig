@@ -9,7 +9,7 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = false
-  editor = gvim --remote-tab-wait
+  editor = vim
 [alias]
   c = commit -m
   a = add
