@@ -52,40 +52,43 @@ hi Visual guibg=#282828
 "hi Cursor guifg=NONE guibg=#586068
 hi Cursor guibg=#a7a7a7
 
-exe 'hi Normal         guifg='.s:white             .' guibg='.s:darkgrey
-exe 'hi Underlined     guifg='.s:grey_blue             .' guibg='.s:darkgrey        .' gui=underline'
-exe 'hi NonText        guifg='.s:lightgrey         .' guibg='.s:darkgrey
-exe 'hi SpecialKey     guifg='.s:lightgrey              .' guibg='.s:darkgrey
+" cterm legend: 1 = red 2 = green 3 = beige/yellow 4 = blue 5 = violet/magenta
+" 6 = lightblue/cyan ? 7 = white
 
-exe 'hi LineNr         guifg='.s:mid_grey_blue     .' guibg='.s:dark_grey_blue  .' gui=none'
-exe 'hi StatusLine     guifg='.s:white             .' guibg='.s:grey            .' gui=italic'
-exe 'hi StatusLineNC   guifg='.s:mid_grey_blue         .' guibg='.s:grey            .' gui=italic'
-exe 'hi VertSplit      guifg='.s:grey              .' guibg='.s:grey            .' gui=none'
+exe 'hi Normal         guifg='.s:white             .' guibg='.s:darkgrey                              .' ctermfg=7'
+exe 'hi Underlined     guifg='.s:grey_blue         .' guibg='.s:darkgrey        .' gui=underline'     .' ctermfg=4'   .' cterm=bold'
+exe 'hi NonText        guifg='.s:lightgrey         .' guibg='.s:darkgrey                              .' ctermfg=6'
+exe 'hi SpecialKey     guifg='.s:lightgrey         .' guibg='.s:darkgrey                              .' ctermfg=6'
 
-exe 'hi Folded         guifg='.s:grey_blue         .' guibg='.s:dark_grey_blue  .' gui=none'
-exe 'hi FoldColumn     guifg='.s:grey_blue         .' guibg='.s:dark_grey_blue  .' gui=none'
-exe 'hi SignColumn     guifg='.s:grey_blue         .' guibg='.s:dark_grey_blue  .' gui=none'
+exe 'hi LineNr         guifg='.s:mid_grey_blue     .' guibg='.s:dark_grey_blue  .' gui=none'          .' ctermfg=6'
+exe 'hi StatusLine     guifg='.s:white             .' guibg='.s:grey            .' gui=italic'        .' ctermfg=7'   .' cterm=bold'
+exe 'hi StatusLineNC   guifg='.s:mid_grey_blue     .' guibg='.s:grey            .' gui=italic'        .' ctermfg=6'   .' cterm=bold'
+exe 'hi VertSplit      guifg='.s:grey              .' guibg='.s:grey            .' gui=none'          .' ctermfg=6'
 
-exe 'hi Comment        guifg='.s:mid_grey_blue     .' guibg='.s:darkgrey        .' gui=italic'
-exe 'hi TODO           guifg='.s:yellow         .' guibg='.s:darkgrey        .' gui=italic,bold'
+exe 'hi Folded         guifg='.s:grey_blue         .' guibg='.s:dark_grey_blue  .' gui=none'          .' ctermfg=4'
+exe 'hi FoldColumn     guifg='.s:grey_blue         .' guibg='.s:dark_grey_blue  .' gui=none'          .' ctermfg=4'
+exe 'hi SignColumn     guifg='.s:grey_blue         .' guibg='.s:dark_grey_blue  .' gui=none'          .' ctermfg=4'
 
-exe 'hi Title          guifg='.s:red               .' guibg='.s:darkgrey        .' gui=none'
+exe 'hi Comment        guifg='.s:mid_grey_blue     .' guibg='.s:darkgrey        .' gui=italic'        .' ctermfg=6'
+exe 'hi TODO           guifg='.s:yellow            .' guibg='.s:darkgrey        .' gui=italic,bold'   .' ctermfg=3 ctermbg=0'   .' cterm=bold'
 
-exe 'hi Constant       guifg='.s:red               .' guibg='.s:darkgrey        .' gui=none'
-exe 'hi String         guifg='.s:green             .' guibg='.s:darkgrey        .' gui=none'
-exe 'hi Special        guifg='.s:lightgreen        .' guibg='.s:darkgrey        .' gui=none'
-exe 'hi Regexp        guifg='.s:lightorange        .' guibg='.s:darkgrey        .' gui=none'
+exe 'hi Title          guifg='.s:red               .' guibg='.s:darkgrey        .' gui=none'          .' ctermfg=1'
 
-exe 'hi Identifier     guifg='.s:grey_blue         .' guibg='.s:darkgrey        .' gui=none'
-exe 'hi Statement      guifg='.s:beige             .' guibg='.s:darkgrey        .' gui=none'
-exe 'hi Conditional    guifg='.s:beige             .' guibg='.s:darkgrey        .' gui=none'
-exe 'hi Repeat         guifg='.s:beige             .' guibg='.s:darkgrey        .' gui=none'
-exe 'hi Structure      guifg='.s:beige             .' guibg='.s:darkgrey        .' gui=none'
-exe 'hi Function       guifg='.s:brown            .' guibg='.s:darkgrey        .' gui=none'
+exe 'hi Constant       guifg='.s:red               .' guibg='.s:darkgrey        .' gui=none'          .' ctermfg=1'
+exe 'hi String         guifg='.s:green             .' guibg='.s:darkgrey        .' gui=none'          .' ctermfg=2'
+exe 'hi Special        guifg='.s:lightgreen        .' guibg='.s:darkgrey        .' gui=none'          .' ctermfg=2'
+exe 'hi Regexp        guifg='.s:lightorange        .' guibg='.s:darkgrey        .' gui=none'          .' ctermfg=3'
 
-exe 'hi PreProc        guifg='.s:lightblue         .' guibg='.s:darkgrey        .' gui=none'
-exe 'hi Operator       guifg='.s:light_orange      .' guibg='.s:darkgrey        .' gui=none'
-exe 'hi Type           guifg='.s:violet            .' guibg='.s:darkgrey        .' gui=italic'
+exe 'hi Identifier     guifg='.s:grey_blue         .' guibg='.s:darkgrey        .' gui=none'          .' ctermfg=4'
+exe 'hi Statement      guifg='.s:beige             .' guibg='.s:darkgrey        .' gui=none'          .' ctermfg=3'
+exe 'hi Conditional    guifg='.s:beige             .' guibg='.s:darkgrey        .' gui=none'          .' ctermfg=3'
+exe 'hi Repeat         guifg='.s:beige             .' guibg='.s:darkgrey        .' gui=none'          .' ctermfg=3'
+exe 'hi Structure      guifg='.s:beige             .' guibg='.s:darkgrey        .' gui=none'          .' ctermfg=3'
+exe 'hi Function       guifg='.s:brown             .' guibg='.s:darkgrey        .' gui=none'          .' ctermfg=3'   .' cterm=bold'
+
+exe 'hi PreProc        guifg='.s:lightblue         .' guibg='.s:darkgrey        .' gui=none'          .' ctermfg=6'
+exe 'hi Operator       guifg='.s:light_orange      .' guibg='.s:darkgrey        .' gui=none'          .' ctermfg=3'
+exe 'hi Type           guifg='.s:violet            .' guibg='.s:darkgrey        .' gui=italic'        .' ctermfg=5'   .' cterm=bold'
 
 "hi Identifier guifg=#7587a6
 " Type d: 'class'
