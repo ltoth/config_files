@@ -1,23 +1,97 @@
 filetype off
 call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+set modelines=0
+
+let mapleader = ","
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+set encoding=utf-8
 set nobackup
 set nowritebackup
+set hidden
+
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
+set showmode
+set showmatch  " show matching brackets
+set cursorline
+set ttyfast
+set laststatus=2 " Always display the status line
+set scrolloff=3
+
+if version >= 730
+  set relativenumber
+  set undofile
+  set colorcolumn=85
+endif
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,eol:¬
+" Toggle listchars
+map <Leader>l :set list! <CR>
+
+" Tab completion options
+" (only complete to the longest unambiguous match, and show a menu)
+set wildmenu
+set completeopt=longest,menu
+set wildmode=list:longest,list:full
+set complete=.,t
+
+set ignorecase
+set smartcase
+set gdefault
 set incsearch		" do incremental searching
+nnoremap / /\v
+vnoremap / /\v
+
+" Hide search highlighting
+map <Leader>h :set invhls <CR>
+
+" Softtabs, 2 spaces
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+set wrap
+set textwidth=78
+set formatoptions=crqn1
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+nnoremap j gj
+nnoremap k gk
+
+nnoremap ; :
+inoremap kj <esc>
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
+
+nnoremap <leader>q gqip
+"nnoremap <leader>v V`]
+
+nnoremap <leader>w <C-w>v<C-w>l
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " This is an alternative that also works in block mode, but the deleted
 " text is lost and it only works for putting the current register.
@@ -44,7 +118,7 @@ if has("autocmd")
   au!
 
   " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text,mkd setlocal textwidth=78
+  "autocmd FileType text,mkd setlocal textwidth=78
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -54,14 +128,7 @@ if has("autocmd")
     \   exe "normal g`\"" |
     \ endif
 
-  "" Save session on close and restore on open
-  "if has('gui_win32')
-  "  autocmd VimLeave * mksession! ~\\work-session.vim
-  "  autocmd VimEnter * source ~\\work-session.vim
-  "else
-  "  " autocmd VimLeave * mksession! ~/work-session.vim
-  "  autocmd VimEnter * source ~/work-session.vim
-  "end
+  autocmd FocusLost * :wa
 
   augroup END
 
@@ -75,15 +142,12 @@ if has("folding")
   set foldenable
   set foldmethod=syntax
   set foldlevel=1
-  set foldnestmax=2
+  set foldnestmax=3
   set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+
+  nnoremap <space> za
 endif
 
-" Softtabs, 2 spaces
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
 
 " Functions for working with tabs and spaces (from
 " http://vimcasts.org/episodes/tabs-and-spaces/)
@@ -99,7 +163,7 @@ function! Stab()
   endif
   call SummarizeTabs()
 endfunction
- 
+
 function! SummarizeTabs()
   try
     echohl ModeMsg
@@ -129,17 +193,13 @@ function! Preserve(command)
   let @/=_s
   call cursor(l, c)
 endfunction
+
 nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap <Leader>= :call Preserve("normal gg=G")<CR>
 
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 	 	\ | wincmd p | diffthis
 
-" Always display the status line
-set laststatus=2
-
-" \ is the leader character
-let mapleader = "\\"
 
 " Store this session
 "map <Leader>ss :mksession! ~/work-session.vim
@@ -148,27 +208,21 @@ let mapleader = "\\"
 "map <Leader>R :e doc/README_FOR_APP<CR>
 
 " Leader shortcuts for Rails commands
-"map <Leader>m :Rmodel 
-"map <Leader>c :Rcontroller 
-"map <Leader>v :Rview 
-"map <Leader>u :Runittest 
-"map <Leader>f :Rfunctionaltest 
-"map <Leader>tm :RTmodel 
-"map <Leader>tc :RTcontroller 
-"map <Leader>tv :RTview 
-"map <Leader>tu :RTunittest 
-"map <Leader>tf :RTfunctionaltest 
-"map <Leader>sm :RSmodel 
-"map <Leader>sc :RScontroller 
-"map <Leader>sv :RSview 
-"map <Leader>su :RSunittest 
-"map <Leader>sf :RSfunctionaltest 
-
-" Hide search highlighting
-map <Leader>h :set invhls <CR>
-
-" Toggle listchars
-map <Leader>l :set list! <CR>
+"map <Leader>m :Rmodel
+"map <Leader>c :Rcontroller
+"map <Leader>v :Rview
+"map <Leader>u :Runittest
+"map <Leader>f :Rfunctionaltest
+"map <Leader>tm :RTmodel
+"map <Leader>tc :RTcontroller
+"map <Leader>tv :RTview
+"map <Leader>tu :RTunittest
+"map <Leader>tf :RTfunctionaltest
+"map <Leader>sm :RSmodel
+"map <Leader>sc :RScontroller
+"map <Leader>sv :RSview
+"map <Leader>su :RSunittest
+"map <Leader>sf :RSfunctionaltest
 
 " Spell checking
 nmap <silent> <Leader>s :set spell! <CR>
@@ -191,12 +245,11 @@ end
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
-if has('gui_win32')
-  cmap <C-P> <C-R>=expand("%:p:h") . "\\" <CR>
-else
-  cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-end
-
+"if has('gui_win32')
+"  cmap <C-P> <C-R>=expand("%:p:h") . "\\" <CR>
+"else
+"  cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+"end
 " Maps autocomplete to tab
 "imap <Tab> <C-N>
 
@@ -205,7 +258,7 @@ end
 vmap D y'>p
 
 " For Haml
-au! BufRead,BufNewFile *.haml         setfiletype haml
+"au! BufRead,BufNewFile *.haml         setfiletype haml
 
 " No Help, please
 nmap <F1> <Esc>
@@ -217,9 +270,6 @@ imap <C-F> <C-R>=expand("%")<CR>
 " overwriting the default register
 vmap P p :call setreg('"', getreg('0')) <CR>
 
-" Display extra whitespace
-" set list listchars=tab:Â»Â·,trail:Â·
-set list listchars=tab:»·,trail:·,eol:¬
 
 " Edit routes
 "command! Rroutes :e config/routes.rb
@@ -231,33 +281,23 @@ if filereadable(".vimrc.local")
 endif
 
 " Use Ack instead of Grep when available
-if executable("ack")
-  set grepprg=ack\ -H\ --nogroup\ --nocolor
-elseif executable("ack.pl")
-  set grepprg=ack.pl\ -H\ --nogroup\ --nocolor
-endif
+"if executable("ack")
+"  set grepprg=ack\ -H\ --nogroup\ --nocolor
+"elseif executable("ack.pl")
+"  set grepprg=ack.pl\ -H\ --nogroup\ --nocolor
+"endif
 
 " Color scheme
 colorscheme twilight
 "highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
+"highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Numbers
 set number
-set numberwidth=5
+set numberwidth=4
 
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
-
-" Tab completion options
-" (only complete to the longest unambiguous match, and show a menu)
-set completeopt=longest,menu
-set wildmode=list:longest,list:full
-set complete=.,t
-
-" case only matters with mixed case expressions
-set ignorecase
-set smartcase
 
 " Tags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
