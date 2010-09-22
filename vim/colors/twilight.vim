@@ -31,8 +31,8 @@ let s:lightorange = '#e8bf62'
 let s:lightblue = '#afc3db'
 
 if version >= 700
-  hi CursorLine guibg=#303030
-  hi CursorColumn guibg=#303030
+  hi CursorLine guibg=#1a1a1a
+  hi CursorColumn guibg=#1a1a1a
   hi MatchParen guifg=#f9ed97 guibg=#282828 gui=bold
 
   "Tabpages
