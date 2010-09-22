@@ -88,6 +88,8 @@ nnoremap <leader>q gqip
 
 nnoremap <leader>w <C-w>v<C-w>l
 
+nnoremap <leader>a :Ack 
+
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -229,19 +231,19 @@ nmap <silent> <Leader>s :set spell! <CR>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
-if has('gui_win32')
-  map <Leader>e :e <C-R>=expand("%:p:h") . "\\" <CR>
-else
-  map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-end
+"if has('gui_win32')
+  "map <Leader>e :e <C-R>=expand("%:p:h") . "\\" <CR>
+"else
+  "map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+"end
 
 " Opens a tab edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>t
-if has('gui_win32')
-  map <Leader>te :tabe <C-R>=expand("%:p:h") . "\\" <CR>
-else
-  map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-end
+"if has('gui_win32')
+  "map <Leader>te :tabe <C-R>=expand("%:p:h") . "\\" <CR>
+"else
+  "map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+"end
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
