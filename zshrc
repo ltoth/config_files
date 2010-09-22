@@ -30,5 +30,3 @@ setopt histignoredups
 
 # keep more history
 export HISTSIZE=200
-
-export PATH=~/bin:$PATH
