@@ -1,6 +1,7 @@
 " Font
 if has('gui_macvim')
   set guifont=Droid\ Sans\ Mono\ Slashed:h12.00
+  set fuoptions=maxvert,maxhorz
 elseif has('gui_gtk2')
   set guifont=Dejavu\s Sans\ Mono\ 11
 elseif has('gui_win32')
@@ -10,7 +11,10 @@ elseif has('x11')
 endif
 
 " No audible bell
-set vb
+set visualbell
+
+" Don't blink the cursor
+set guicursor=a:blinkon0
 
 " No toolbar
 set guioptions-=T
