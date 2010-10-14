@@ -5,7 +5,7 @@ if has('gui_macvim')
 elseif has('gui_gtk2')
   set guifont=Dejavu\s Sans\ Mono\ 11
 elseif has('gui_win32')
-  set guifont=Consolas:h10:cANSI
+  set guifont=Droid_Sans_Mono_Slashed:h10:cANSI
 elseif has('x11')
   set guifont=-*-dejavu-medium-r-normal-*-*-110-*-*-m-*-*
 endif
