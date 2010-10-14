@@ -1,0 +1,43 @@
+# List of removed vim scripts
+
+    |~vim/
+      |~after/
+      | `~ftplugin/
+      |   |-cucumber.vim
+      |   |-eruby.vim
+      |   `-ruby.vim
+      |~autoload/
+      | `-rails.vim
+      |~doc/
+      | |-greplace.txt
+      | |-matchit.txt
+      | |-rails.txt
+      | |-snippets_emu.txt
+      | |-surround.txt
+      | |-tags
+      | |-tComment.txt
+      | `-textile.txt
+      |~ftdetect/
+      | `-cucumber.vim
+      |~ftplugin/
+      | |-cucumber.vim
+      | `-textile.vim
+      |~indent/
+      | `-cucumber.vim
+      |~plugin/
+      | |-ctags.vim
+      | |-endwise.vim
+      | |-git.vim
+      | |-greplace.vim
+      | |-matchit.vim
+      | |-pastie.vim
+      | |-rails.vim
+      | |-search.vim
+      | |-shoulda.vim
+      | |-snippetsEmu.vim
+      | |-surround.vim
+      | |-tComment.vim
+      | `-textile.vim
+      `~syntax/
+        |-cucumber.vim
+        `-textile.vim
