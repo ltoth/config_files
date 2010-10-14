@@ -1,4 +1,4 @@
-xcopy /E /Y /I vim "%USERPROFILE%\vimfiles"
+robocopy vim "%USERPROFILE%\vimfiles" /mir /v /xd .git
 
 copy /Y vimrc "%USERPROFILE%\_vimrc"
 copy /Y gvimrc "%USERPROFILE%\_gvimrc"
