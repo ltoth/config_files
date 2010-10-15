@@ -29,6 +29,7 @@ set laststatus=2 " Always display the status line
 set scrolloff=3
 set statusline=%f%<\ %h%w%m%r[%L][%{&ff}]%y
 set statusline+=%#Error#%{SyntasticStatuslineFlag()}%*
+set statusline+=%{fugitive#statusline()}
 set statusline+=%=%-14.(%l,%c%V%)\ %P
 
 if version >= 730
