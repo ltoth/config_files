@@ -25,3 +25,6 @@
 [submodule "vim/bundle/taglist"]
 	path = vim/bundle/taglist
 	url = http://github.com/vim-scripts/taglist.vim.git
+[submodule "vim/bundle/bufexplorer"]
+	path = vim/bundle/bufexplorer
+	url = http://github.com/bronson/vim-bufexplorer.git
