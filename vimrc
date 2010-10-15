@@ -90,7 +90,6 @@ inoremap kj <esc>
 map Q gq
 
 nnoremap <leader>q gqip
-"nnoremap <leader>v V`]
 
 nnoremap <leader>w <C-w>v<C-w>l
 
@@ -100,10 +99,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" This is an alternative that also works in block mode, but the deleted
-" text is lost and it only works for putting the current register.
-"vnoremap p "_dp
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -124,9 +119,6 @@ if has("autocmd")
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  "autocmd FileType text,mkd setlocal textwidth=78
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -205,68 +197,8 @@ endfunction
 nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap <Leader>= :call Preserve("normal gg=G")<CR>
 
-"command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		 "\ | wincmd p | diffthis
-
-
-" Store this session
-"map <Leader>ss :mksession! ~/work-session.vim
-
-" Edit the README_FOR_APP (makes :R commands work)
-"map <Leader>R :e doc/README_FOR_APP<CR>
-
-" Leader shortcuts for Rails commands
-"map <Leader>m :Rmodel
-"map <Leader>c :Rcontroller
-"map <Leader>v :Rview
-"map <Leader>u :Runittest
-"map <Leader>f :Rfunctionaltest
-"map <Leader>tm :RTmodel
-"map <Leader>tc :RTcontroller
-"map <Leader>tv :RTview
-"map <Leader>tu :RTunittest
-"map <Leader>tf :RTfunctionaltest
-"map <Leader>sm :RSmodel
-"map <Leader>sc :RScontroller
-"map <Leader>sv :RSview
-"map <Leader>su :RSunittest
-"map <Leader>sf :RSfunctionaltest
-
 " Spell checking
 nmap <silent> <Leader>s :set spell! <CR>
-
-" Opens an edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>e
-"if has('gui_win32')
-  "map <Leader>e :e <C-R>=expand("%:p:h") . "\\" <CR>
-"else
-  "map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-"end
-
-" Opens a tab edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>t
-"if has('gui_win32')
-  "map <Leader>te :tabe <C-R>=expand("%:p:h") . "\\" <CR>
-"else
-  "map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-"end
-
-" Inserts the path of the currently edited file into a command
-" Command mode: Ctrl+P
-"if has('gui_win32')
-"  cmap <C-P> <C-R>=expand("%:p:h") . "\\" <CR>
-"else
-"  cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-"end
-" Maps autocomplete to tab
-"imap <Tab> <C-N>
-
-" Duplicate a selection
-" Visual mode: D
-vmap D y'>p
-
-" For Haml
-"au! BufRead,BufNewFile *.haml         setfiletype haml
 
 " No Help, please
 nmap <F1> <Esc>
@@ -278,27 +210,13 @@ imap <C-F> <C-R>=expand("%")<CR>
 " overwriting the default register
 vmap P p :call setreg('"', getreg('0')) <CR>
 
-
-" Edit routes
-"command! Rroutes :e config/routes.rb
-"command! RTroutes :tabe config/routes.rb
-
 " Local config
 if filereadable(".vimrc.local")
   source .vimrc.local
 endif
 
-" Use Ack instead of Grep when available
-"if executable("ack")
-"  set grepprg=ack\ -H\ --nogroup\ --nocolor
-"elseif executable("ack.pl")
-"  set grepprg=ack.pl\ -H\ --nogroup\ --nocolor
-"endif
-
 " Color scheme
 colorscheme twilight
-"highlight NonText guibg=#060606
-"highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Numbers
 set number
