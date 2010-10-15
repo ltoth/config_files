@@ -27,6 +27,9 @@ set cursorline
 set ttyfast
 set laststatus=2 " Always display the status line
 set scrolloff=3
+set statusline=%<%f\ %h%m%r
+set statusline+=%#Error#%{SyntasticStatuslineFlag()}%*
+set statusline+=%=%-14.(%l,%c%V%)\ %P
 
 if version >= 730
   set relativenumber
@@ -200,8 +203,8 @@ endfunction
 nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap <Leader>= :call Preserve("normal gg=G")<CR>
 
-command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-	 	\ | wincmd p | diffthis
+"command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+		 "\ | wincmd p | diffthis
 
 
 " Store this session
@@ -299,9 +302,8 @@ colorscheme twilight
 set number
 set numberwidth=4
 
-" Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
-
-" Tags
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+" Syntastic plugin settings
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_quiet_warnings=1
 

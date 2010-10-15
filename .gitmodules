@@ -7,3 +7,6 @@
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = http://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = http://github.com/scrooloose/syntastic.git
