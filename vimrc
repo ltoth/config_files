@@ -27,7 +27,7 @@ set cursorline
 set ttyfast
 set laststatus=2 " Always display the status line
 set scrolloff=3
-set statusline=%<%f\ %h%m%r
+set statusline=%f%<\ %h%w%m%r[%L][%{&ff}]%y
 set statusline+=%#Error#%{SyntasticStatuslineFlag()}%*
 set statusline+=%=%-14.(%l,%c%V%)\ %P
 
@@ -82,6 +82,7 @@ nnoremap j gj
 nnoremap k gk
 
 nnoremap ; :
+nnoremap \ ;
 inoremap kj <esc>
 
 " Don't use Ex mode, use Q for formatting
