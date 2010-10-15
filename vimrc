@@ -222,6 +222,13 @@ colorscheme twilight
 set number
 set numberwidth=4
 
+" NERDTree settings
+nmap <Leader>d :NERDTreeToggle<CR>
+nmap <Leader>D :NERDTreeFind<CR>
+
+" NERDCommenter settings
+let NERDSpaceDelims=1
+
 " Syntastic plugin settings
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
