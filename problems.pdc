@@ -1,0 +1,7 @@
+# List of problems
+
+- fugitive does not work (git version too old?)
+
+- taglist does not work (OSX builtin ctags has weird syntax or is old?)
+
+
