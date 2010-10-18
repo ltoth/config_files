@@ -235,4 +235,8 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_warnings=1
 
 " Taglist settings
-nmap <Leader>t :TlistToggle<CR>
+nmap <Leader>g :TlistToggle<CR>
+
+" Commant-T settings
+let g:CommandTMatchWindowAtTop = 1
+
