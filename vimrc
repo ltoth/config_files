@@ -28,8 +28,12 @@ set ttyfast
 set laststatus=2 " Always display the status line
 set scrolloff=3
 set statusline=%f%<\ %h%w%m%r[%L][%{&ff}]%y
-set statusline+=%#Error#%{SyntasticStatuslineFlag()}%*
-set statusline+=%{fugitive#statusline()}
+if exists("g:loaded_syntastic_plugin")
+  set statusline+=%#Error#%{SyntasticStatuslineFlag()}%*
+endif
+if exists('g:loaded_fugitive') || &cp
+  set statusline+=%{fugitive#statusline()}
+endif
 set statusline+=%=%-14.(%l,%c%V%)\ %P
 
 if version >= 730
@@ -235,7 +239,7 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_warnings=1
 
 " Taglist settings
-nmap <Leader>g :TlistToggle<CR>
+nmap <silent> <Leader>g :TlistToggle<CR>
 
 " Commant-T settings
 let g:CommandTMatchWindowAtTop = 1
