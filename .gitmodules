@@ -43,3 +43,6 @@
 [submodule "vim/bundle/rake"]
 	path = vim/bundle/rake
 	url = git://github.com/tpope/vim-rake.git
+[submodule "vim/bundle/indexedsearch"]
+	path = vim/bundle/indexedsearch
+	url = git://github.com/bronson/vim-indexedsearch.git
