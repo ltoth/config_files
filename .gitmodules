@@ -40,3 +40,9 @@
 [submodule "vim/bundle/indexedsearch"]
 	path = vim/bundle/indexedsearch
 	url = git://github.com/bronson/vim-indexedsearch.git
+[submodule "vim/bundle/kwbdi"]
+	path = vim/bundle/kwbdi
+	url = git://github.com/vim-scripts/kwbdi.vim.git
+[submodule "vim/bundle/taglist"]
+	path = vim/bundle/taglist
+	url = git://github.com/vim-scripts/taglist.vim.git
