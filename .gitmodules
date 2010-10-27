@@ -22,15 +22,9 @@
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/taglist"]
-	path = vim/bundle/taglist
-	url = http://github.com/vim-scripts/taglist.vim.git
 [submodule "vim/bundle/bufexplorer"]
 	path = vim/bundle/bufexplorer
 	url = http://github.com/bronson/vim-bufexplorer.git
-[submodule "vim/bundle/kwbdi"]
-	path = vim/bundle/kwbdi
-	url = http://github.com/vim-scripts/kwbdi.vim.git
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
