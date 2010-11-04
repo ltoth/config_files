@@ -1,2 +1,2 @@
 " Markdown
-autocmd BufNewFile,BufReadPost *.txt,*.mkd set filetype=mkd
+autocmd BufNewFile,BufReadPost *.mkd set filetype=mkd
