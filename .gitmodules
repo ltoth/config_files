@@ -43,3 +43,6 @@
 [submodule "vim/bundle/bufexplorer"]
 	path = vim/bundle/bufexplorer
 	url = https://github.com/vim-scripts/bufexplorer.zip.git
+[submodule "vim/bundle/pdc"]
+	path = vim/bundle/pdc
+	url = https://github.com/vim-scripts/pdc.vim.git
