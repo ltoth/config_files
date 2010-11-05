@@ -1,7 +1,7 @@
 let mapleader=","
 
 nnoremap ; :
-nnoremap \ ;
+nnoremap \\ ;
 
 " Instapaper plugin config
 let g:instapaper_username = "instapaper@lukastoth.com"
