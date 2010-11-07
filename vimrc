@@ -36,10 +36,9 @@ if exists('g:loaded_fugitive') || &cp
 endif
 set statusline+=%=%-14.(%l,%c%V%)\ %P
 
-if version >= 730
+if version >= 703
   set relativenumber
   set undofile
-  set colorcolumn=85
 endif
 
 " Display extra whitespace
@@ -73,6 +72,10 @@ set expandtab
 set wrap
 set textwidth=78
 set formatoptions=crqn1
+
+if version >= 703
+  set colorcolumn=+1
+endif
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>

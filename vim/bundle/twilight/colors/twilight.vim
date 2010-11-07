@@ -47,6 +47,10 @@ if version >= 700
   "PmenuThumb
 endif
 
+if version >= 703
+  hi ColorColumn guibg=#1a1a1a
+endif
+
 hi Visual guibg=#282828
 
 "hi Cursor guifg=NONE guibg=#586068
