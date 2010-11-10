@@ -12,7 +12,7 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = false
-  editor = vim
+  editor = /usr/bin/vim
 [alias]
   c = commit -m
   a = add
