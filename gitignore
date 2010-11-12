@@ -1,6 +1,7 @@
 .*.swp
 tags
 .swo
+.*.un~
 ltoth-*.gemspec
 *.scratch.*
 pentadactyl/info
