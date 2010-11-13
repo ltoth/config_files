@@ -93,6 +93,11 @@ nnoremap ; :
 nnoremap \ ;
 inoremap kj <esc>
 
+" In normal mode, use <C-m> and <C-p> to switch tabs like Pentadactyl or Vrome
+" instead of the standard mapping which is j and k
+nnoremap <C-n> gt
+nnoremap <C-p> gT
+
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
