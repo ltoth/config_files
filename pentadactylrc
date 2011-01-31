@@ -1,11 +1,11 @@
-let mapleader=","
+set mapleader=","
 
 nnoremap ; :
 nnoremap \\ ;
 
 " Instapaper plugin config
-let g:instapaper_username = "instapaper@lukastoth.com"
-let g:instapaper_password = "ipipipip"
+set g:instapaper_username = "instapaper@lukastoth.com"
+set g:instapaper_password = "ipipipip"
 
 map <Leader>i :instapaper<CR>
 
