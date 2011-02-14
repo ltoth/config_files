@@ -27,3 +27,7 @@
   plre = pull --rebase
   st = status
   out = log origin..HEAD
+  co = checkout
+  hist = log --pretty=format:\"%C(yellow)%h%Creset %Cblue%ad%Creset %s%C(green bold)%d%Creset %C(cyan)[%an]%Creset\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
