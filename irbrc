@@ -1,8 +1,8 @@
 require 'rubygems'
-require 'wirble'
+# require 'wirble'
 require 'pp'
-Wirble.init
-Wirble.colorize
+# Wirble.init
+# Wirble.colorize
 
 alias q exit
 
@@ -19,9 +19,9 @@ require 'irb/completion'
 ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 
 # History
-require 'irb/ext/save-history'
-IRB.conf[:SAVE_HISTORY] = 100
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
+# require 'irb/ext/save-history'
+# IRB.conf[:SAVE_HISTORY] = 100
+# IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
 
 # Easily print methods local to an object's class
 class Object
