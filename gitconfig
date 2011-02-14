@@ -6,9 +6,13 @@
   name = Lukas Toth
   email = lukas@lukastoth.com
 [color]
+  ui = auto
   diff = auto
   status = auto
   branch = auto
+  grep = auto
+  interactive = auto
+  showbranch = auto
 [core]
   excludesfile = ~/.gitignore
   autocrlf = false
