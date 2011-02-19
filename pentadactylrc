@@ -4,9 +4,15 @@ nnoremap ; :
 nnoremap \\ ;
 
 " Instapaper plugin config
-set g:instapaper_username = "instapaper@lukastoth.com"
-set g:instapaper_password = "ipipipip"
+" FIXME This is broken in newer versions of Pentadactyl
+" set g:instapaper_username = "instapaper@lukastoth.com"
+" set g:instapaper_password = "ipipipip"
 
-map <Leader>i :instapaper<CR>
+" map <Leader>i :instapaper<CR>
+set passkeys+='https://mail\.google\.com':xsem!#rRaAfFvN[]{}z.IUST+=-gidac/?lujkonpyt*q
+" autocmd LocationChange 'google\.com' -js modes.set(modes.PASS_THROUGH)
+autocmd LocationChange !'mail\.google\.com' :set editor="mvim -f"
+autocmd LocationChange 'mail\.google\.com' :set editor="mvim -f -c 'set ft=mail'"
 
-
+autocmd LocationChange !'mail\.google\.com' :set strictfocus
+autocmd LocationChange 'mail\.google\.com' :set nostrictfocus
