@@ -1,7 +1,8 @@
 " Font
 if has('gui_macvim')
-  set guifont=Droid\ Sans\ Mono\ Slashed:h12.00
+  set guifont=Droid\ Sans\ Mono\ Slashed:h10.00
   set fuoptions=maxvert,maxhorz
+  set linespace=2
 elseif has('gui_gtk2')
   set guifont=Dejavu\s Sans\ Mono\ 11
 elseif has('gui_win32')
