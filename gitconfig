@@ -17,6 +17,8 @@
   excludesfile = ~/.gitignore
   autocrlf = false
   editor = /usr/bin/vim
+[credential]
+  helper = osxkeychain
 [alias]
   c = commit -m
   a = add
