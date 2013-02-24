@@ -1,4 +1,4 @@
-export PATH=~/bin:~/.cabal/bin:$PATH
+export PATH=~/bin:~/.cabal/bin:/usr/local/bin:$PATH
 
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
