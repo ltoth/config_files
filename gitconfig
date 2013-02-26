@@ -19,6 +19,8 @@
   editor = /usr/bin/vim
 [credential]
   helper = osxkeychain
+[push]
+  default=upstream
 [alias]
   c = commit -m
   a = add
