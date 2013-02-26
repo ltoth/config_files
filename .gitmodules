@@ -46,3 +46,6 @@
 [submodule "vim/bundle/pdc"]
 	path = vim/bundle/pdc
 	url = https://github.com/vim-scripts/pdc.vim.git
+[submodule "vim/bundle/commentary"]
+	path = vim/bundle/commentary
+	url = https://github.com/tpope/vim-commentary.git
