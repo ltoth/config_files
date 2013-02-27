@@ -44,7 +44,7 @@ endif
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,eol:¬
 " Toggle listchars
-map <Leader>l :set list! <CR>
+nnoremap <Leader>l :set list! <CR>
 
 " Tab completion options
 " (only complete to the longest unambiguous match, and show a menu)
@@ -61,7 +61,7 @@ nnoremap / /\v
 vnoremap / /\v
 
 " Hide search highlighting
-map <Leader>h :set invhls <CR>
+nnoremap <Leader>h :set invhls <CR>
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -81,25 +81,25 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 
 nnoremap j gj
 nnoremap k gk
 
 nnoremap ; :
 nnoremap \ ;
-inoremap kj <esc>
 
 " In normal mode, use <C-m> and <C-p> to switch tabs like Pentadactyl or Vrome
 " instead of the standard mapping which is j and k
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 
+" In command-line mode, use <C-m> and <C-p> to go down and up in history
+" instead of the standard mapping which is j and k
+cnoremap <C-n> <Down>
+cnoremap <C-p> <Up>
+
 " Don't use Ex mode, use Q for formatting
-map Q gq
+noremap Q gq
 
 nnoremap <leader>q gqip
 
@@ -206,21 +206,21 @@ function! Preserve(command)
   call cursor(l, c)
 endfunction
 
-nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
-nmap <Leader>= :call Preserve("normal gg=G")<CR>
+nnoremap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
+nnoremap <Leader>= :call Preserve("normal gg=G")<CR>
 
 " Spell checking
-nmap <silent> <Leader>s :set spell! <CR>
+nnoremap <silent> <Leader>s :set spell! <CR>
 
 " No Help, please
 nmap <F1> <Esc>
 
 " Press ^F from insert mode to insert the current file name
-imap <C-F> <C-R>=expand("%")<CR>
+inoremap <C-F> <C-R>=expand("%")<CR>
 
 " Press Shift+P while in visual mode to replace the selection without
 " overwriting the default register
-vmap P p :call setreg('"', getreg('0')) <CR>
+vnoremap P p :call setreg('"', getreg('0')) <CR>
 
 " Local config
 if filereadable(".vimrc.local")
@@ -235,8 +235,8 @@ set number
 set numberwidth=4
 
 " NERDTree settings
-nmap <Leader>d :NERDTreeToggle<CR>
-nmap <Leader>D :NERDTreeFind<CR>
+nnoremap <Leader>d :NERDTreeToggle<CR>
+nnoremap <Leader>D :NERDTreeFind<CR>
 
 " NERDCommenter settings
 let NERDSpaceDelims=1
@@ -247,7 +247,7 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_warnings=1
 
 " Taglist settings
-nmap <silent> <Leader>g :TlistToggle<CR>
+nnoremap <silent> <Leader>g :TlistToggle<CR>
 
 " Commant-T settings
 let g:CommandTMatchWindowAtTop = 1
