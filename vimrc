@@ -18,7 +18,7 @@ set nobackup
 set nowritebackup
 set hidden
 
-set history=50		" keep 50 lines of command line history
+set history=500		" keep 500 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set showmode
