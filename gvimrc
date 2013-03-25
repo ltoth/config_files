@@ -26,6 +26,12 @@ set guioptions+=c
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,eol:¬
 
+set cursorline
+
+if version >= 703
+  set colorcolumn=+1
+endif
+
 " Local config
 if filereadable(".gvimrc.local")
   source .gvimrc.local

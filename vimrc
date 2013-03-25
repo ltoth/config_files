@@ -23,7 +23,6 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set showmode
 set showmatch  " show matching brackets
-set cursorline
 set ttyfast
 set laststatus=2 " Always display the status line
 set scrolloff=3
@@ -70,10 +69,6 @@ set expandtab
 set wrap
 set textwidth=78
 set formatoptions=crqn1
-
-if version >= 703
-  set colorcolumn=+1
-endif
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
