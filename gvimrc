@@ -23,6 +23,9 @@ set guioptions-=T
 " Use console dialogs
 set guioptions+=c
 
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,eol:¬
+
 " Local config
 if filereadable(".gvimrc.local")
   source .gvimrc.local
