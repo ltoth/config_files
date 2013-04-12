@@ -1,2 +1,2 @@
-" Markdown
-autocmd BufNewFile,BufReadPost *.txt,*.pdc set filetype=pdc
+" Pandoc
+autocmd BufNewFile,BufReadPost *.txt,*.pdc set filetype=pandoc

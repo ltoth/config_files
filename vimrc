@@ -245,3 +245,6 @@ nnoremap <silent> <Leader>g :TlistToggle<CR>
 " Commant-T settings
 let g:CommandTMatchWindowAtTop = 1
 
+" Pandoc
+let g:pandoc_use_hard_wraps = 1
+let g:pandoc_auto_format = 1
