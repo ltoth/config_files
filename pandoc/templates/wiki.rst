@@ -1,3 +1,5 @@
+#format rst
+
 $if(title)$
 $title$
 
@@ -26,7 +28,10 @@ $include-before$
 
 $endfor$
 $if(toc)$
-.. contents::
+.. macro:: <<Navigation(siblings)>>
+
+.. contents:: :local:
+   :backlinks: none
    :depth: $toc-depth$
 ..
 
