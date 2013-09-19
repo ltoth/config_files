@@ -40,6 +40,9 @@ if version >= 703
   set undofile
 endif
 
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,eol:¬
+
 " Toggle listchars
 nnoremap <Leader>l :set list! <CR>
 
