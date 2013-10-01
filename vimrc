@@ -250,3 +250,6 @@ let g:CommandTMatchWindowAtTop = 1
 
 " Pandoc
 let g:pandoc_use_hard_wraps = 1
+
+" vim2hs settings
+let g:haskell_conceal_wide = 1
