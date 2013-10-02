@@ -27,12 +27,12 @@ set ttyfast
 set laststatus=2 " Always display the status line
 set scrolloff=3
 set statusline=%f%<\ %h%w%m%r[%L][%{&ff}]%y
-if exists("g:loaded_syntastic_plugin")
+"if exists("g:loaded_syntastic_plugin")
   set statusline+=%#Error#%{SyntasticStatuslineFlag()}%*
-endif
-if exists('g:loaded_fugitive') || &cp
+"endif
+"if exists('g:loaded_fugitive') || &cp
   set statusline+=%{fugitive#statusline()}
-endif
+"endif
 set statusline+=%=%-14.(%l,%c%V%)\ %P
 
 if version >= 703
