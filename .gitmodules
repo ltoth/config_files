@@ -55,3 +55,9 @@
 [submodule "vim/bundle/ghcmod"]
 	path = vim/bundle/ghcmod
 	url = https://github.com/eagletmt/ghcmod-vim.git
+[submodule "vim/bundle/neocomplcache"]
+	path = vim/bundle/neocomplcache
+	url = https://github.com/Shougo/neocomplcache.vim.git
+[submodule "vim/bundle/neco-ghc"]
+	path = vim/bundle/neco-ghc
+	url = https://github.com/ujihisa/neco-ghc
