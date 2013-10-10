@@ -17,7 +17,7 @@ fi
 bindkey -v
 
 # use incremental search
-bindkey ^R history-incremental-search-backward
+bindkey -M vicmd '/' history-incremental-search-backward
 
 # expand functions in the prompt
 setopt prompt_subst
