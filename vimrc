@@ -240,7 +240,7 @@ let NERDSpaceDelims=1
 " Syntastic plugin settings
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
-let g:syntastic_quiet_warnings=1
+let g:syntastic_haskell_ghc_mod_args = '-g -fno-warn-unused-do-bind'
 
 " Taglist settings
 nnoremap <silent> <Leader>g :TlistToggle<CR>
