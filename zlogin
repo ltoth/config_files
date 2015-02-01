@@ -2,6 +2,7 @@ export PATH=~/bin:~/.cabal/bin:/usr/local/bin:$PATH
 
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
   source $HOME/.nix-profile/etc/profile.d/nix.sh
+  export NIX_PATH="$HOME/src/nixpkgs:nixpkgs=$HOME/src/nixpkgs"
 fi
 
 git_prompt_info() {
